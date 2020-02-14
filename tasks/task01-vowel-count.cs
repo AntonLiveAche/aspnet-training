@@ -1,5 +1,5 @@
 using System;
-		
+
 // Задача: реализовать метод CountVowels, который должен подсчитывать количество гласных символов в переданной строке.
 //   * Гласными считаются символы - 'a', 'e', 'i', 'o', 'u'.
 //   * Метод должен выбрасывать исключение ArgumentNullException в случае, если в метод передали null.
@@ -7,11 +7,32 @@ using System;
 
 public class Program
 {
-	public static int CountVowels(string s)
-	{
-		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
-		return -1;
-	}
+    public static int CountVowels(string s)
+    {
+        // ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
+        if(s==null)
+        {
+            throw new ArgumentException(null);
+            
+        }
+        string vowels = "aeiou";
+        int symb,count=0;
+        symb = s.Length;
+
+       for (int i=0;i< symb; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (s[i] == vowels[j])
+                {
+                    
+                    count++;
+                }
+            }
+        }
+        
+        return count;
+    }
 
 	// ----- ЗАПРЕЩЕНО ИЗМЕНЯТЬ КОД МЕТОДОВ, КОТОРЫЕ НАХОДЯТСЯ НИЖЕ -----
 
